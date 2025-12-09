@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  elasticmq:
+    image: softwaremill/elasticmq-native
+    volumes:
+      - ./elasticmq.conf:/opt/elasticmq.conf
+    environment:
+      - JAVA_OPTS=-Dconfig.file=/opt/elasticmq.conf
+    ports:
+      - "9324:9324"
